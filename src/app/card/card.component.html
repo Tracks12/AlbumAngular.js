@@ -1,0 +1,9 @@
+<!-- Card -->
+<article class="card">
+	<img [src]="card.src ? card.src : '/assets/imgs/placeholder.png'" [alt]="card.title" />
+	<div class="card-body">
+		<h3>{{ card.title }}</h3>
+		<p>{{ card.desc }}</p>
+		<p class="likes">{{ card.likes }} <i class="far fa-heart"></i></p>
+	</div>
+</article>
