@@ -1,9 +1,9 @@
 <!-- Card -->
 <article class="card">
-	<img [src]="card.src ? card.src : '/assets/imgs/placeholder.png'" [alt]="card.title" />
+	<img [src]="card.src ? card.src : '/assets/imgs/placeholder.png'" [alt]="card.title ? card.title : 'Title'" />
 	<div class="card-body">
-		<h3>{{ card.title }}</h3>
-		<p>{{ card.desc }}</p>
-		<p class="likes">{{ card.likes }} <i class="far fa-heart"></i></p>
+		<h3>{{ card.title ? card.title : 'Title' }}</h3>
+		<p>{{ card.desc ? card.desc : 'Description' }}</p>
+		<p class="likes">{{ card.likes }} <i (click)="likes()" class="{{ this.stateLike ? 'fa' : 'far' }} fa-heart"></i></p>
 	</div>
 </article>

@@ -16,9 +16,16 @@ class Card {
 export class CardComponent implements OnInit {
 	@Input() card!: Card;
 
+	stateLike = false;
+
 	constructor() { }
 
-	ngOnInit(): void {
+	likes() {
+		this.stateLike = !this.stateLike;
+		this.stateLike ? this.card.likes++ : this.card.likes--;
+	}
 
+	ngOnInit(): void {
+		this.card.likes += this.stateLike ? 1 : 0
 	}
 }
