@@ -1,16 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 class Card {
-  title!: string;
-  desc!: string;
-  src!: string;
+	id!: number;
+	title!: string;
+	desc!: string;
+	src!: string;
 	likes!: number;
 }
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+	selector: 'app-card',
+	templateUrl: './card.component.html',
+	styleUrls: ['./card.component.css']
 })
 
 export class CardComponent implements OnInit {
@@ -26,6 +27,7 @@ export class CardComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.card.likes += this.stateLike ? 1 : 0
+		this.stateLike = [2].includes(this.card.id);
+		this.card.likes += this.stateLike ? 1 : 0;
 	}
 }
