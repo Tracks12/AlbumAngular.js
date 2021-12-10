@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class NavbarComponent implements OnInit {
 	pages = [
-		{ href: "#home", text: "Home" },
-		{ href: "#about", text: "About" },
-		{ href: "#contact", text: "Contact" }
+		{ href: "", text: "Home" },
+		{ href: "about", text: "About" },
+		{ href: "contact", text: "Contact" }
 	];
 
 	constructor() { }

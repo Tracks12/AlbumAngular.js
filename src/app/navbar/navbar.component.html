@@ -4,7 +4,7 @@
 		<ul>
 
 			<li *ngFor="let page of pages">
-				<a [href]="page.href">{{ page.text }}</a>
+				<a [routerLink]="page.href">{{ page.text }}</a>
 			</li>
 
 		</ul>

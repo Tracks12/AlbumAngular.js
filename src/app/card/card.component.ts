@@ -1,12 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-class Card {
-	id!: number;
-	title!: string;
-	desc!: string;
-	src!: string;
-	likes!: number;
-}
+import { Card } from "../types";
 
 @Component({
 	selector: 'app-card',
@@ -17,17 +11,17 @@ class Card {
 export class CardComponent implements OnInit {
 	@Input() card!: Card;
 
+	likes = 0;
 	stateLike = false;
 
 	constructor() { }
 
-	likes() {
+	like() {
 		this.stateLike = !this.stateLike;
-		this.stateLike ? this.card.likes++ : this.card.likes--;
+		this.likes += this.stateLike ? 1 : -1;
 	}
 
 	ngOnInit(): void {
-		this.stateLike = [2].includes(this.card.id);
-		this.card.likes += this.stateLike ? 1 : 0;
+
 	}
 }

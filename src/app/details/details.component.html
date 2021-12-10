@@ -1,0 +1,12 @@
+<main>
+  <div class="container">
+    <article class="details" *ngIf="card">
+      <h3>{{ card.title }}</h3>
+      <a routerLink="/">Retour à l'accueil</a>
+      <div class="details-body">
+        <img [src]="card.picture" [alt]="card.title" />
+        <p>{{ card.description }}</p>
+      </div>
+    </article>
+  </div>
+</main>
