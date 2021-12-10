@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { PostService } from '../post.service';
 import { Card } from '../types';
-import { POSTS } from "../posts";
 
 @Component({
   selector: 'app-album',
@@ -15,8 +14,7 @@ export class AlbumComponent implements OnInit {
 
 	constructor(private postService: PostService) { }
 
-	ngOnInit(): void {
-		this.postService.getAllPosts()
-			.then((res) => this.cards = res);
+	async ngOnInit(): Promise<void> {
+		this.cards = await this.postService.getAllPosts();
 	}
 }

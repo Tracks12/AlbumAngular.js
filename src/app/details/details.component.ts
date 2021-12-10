@@ -17,9 +17,8 @@ export class DetailsComponent implements OnInit {
 		private postService: PostService
 	) { }
 
-	ngOnInit(): void {
+	async ngOnInit(): Promise<void> {
 		const id = Number(this.route.snapshot.paramMap.get('id'));
-		this.postService.getPost(id)
-			.then((res) => this.card = res);
+		this.card = await this.postService.getPost(id);
 	}
 }

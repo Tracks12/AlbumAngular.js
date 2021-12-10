@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Card } from "./types";
-import { POSTS } from './posts';
 
 @Injectable({
   providedIn: 'root'
