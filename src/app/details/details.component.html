@@ -1,11 +1,12 @@
+<!-- Details -->
 <main>
   <div class="container">
     <article class="details" *ngIf="card">
-      <h3>{{ card.title }}</h3>
+      <h3>{{ card.title ? card.title : 'Title' }}</h3>
       <a routerLink="/">Retour à l'accueil</a>
       <div class="details-body">
-        <img [src]="card.picture" [alt]="card.title" />
-        <p>{{ card.description }}</p>
+        <img [src]="card.picture ? card.picture : '/assets/imgs/placeholder.png'" [alt]="card.title ? card.title : 'Title'" />
+        <p>{{ card.description ? card.description : 'Description' }}</p>
       </div>
     </article>
   </div>
